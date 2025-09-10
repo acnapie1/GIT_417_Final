@@ -1,0 +1,133 @@
+/*CSS by Abby Napier */
+
+/*CSS RESET */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*Custom Styles*/
+:root {
+  --lilac: #ECBEED;
+  --lt-green: #53B889;
+  --dk-gray: #252425;
+  --dk-blue: #02126D;
+  --red: #A61C28;
+  --lt-blue: #0388A6;
+  --white: #F2F2F2;
+}
+
+
+body.light-mode {
+  background-color: var(--white);
+  color: var(--dk-gray);
+}
+
+body.dark-mode {
+  background-color: var(--dk-gray);
+  color: var(--white);
+}
+
+/*Light/Dark toggle*/
+#light-toggle {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--white);
+  border: 1px solid var(--dk-gray);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  appearance: none;
+  z-index: 1;
+}
+
+/*Dark Mode Automatic*/
+@media (prefers-color-scheme: dark) {
+  body:not(.light-mode):not(.dark-mode) {
+    background-color: var(--dk-gray);
+    color: var(--white);
+  }
+}
+
+/*Light Mode Automatic*/
+@media (prefers-color-scheme: light) {
+  body:not(.light-mode):not(.dark-mode) {
+    background-color: var(--white);
+    color: var(--dk-gray);
+  }
+}
+
+.color-table { 
+    border-collapse: collapse; 
+    margin: 10px 0; 
+} 
+
+.color-table td {
+    border: 1px solid #ccc;
+    padding: 10px; 
+    text-align: left;
+} 
+
+.color-table label { 
+    font-weight: bold;
+    margin-right: 10px;
+} 
+
+#splat {
+     width: 200px; 
+     height: 200px; 
+     background-color: #BF26A6;
+    clip-path: url(#splatClip);
+ }
