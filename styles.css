@@ -50,6 +50,7 @@ table {
 	border-spacing: 0;
 }
 
+
 /*Custom Styles*/
 :root {
   --lilac: #ECBEED;
@@ -59,8 +60,87 @@ table {
   --red: #A61C28;
   --lt-blue: #0388A6;
   --white: #F2F2F2;
+  --body-font: "Sansation", sans-serif;
+  --header-font:  "Jua", sans-serif;
+  --logo-font: "Flavors", cursive;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
+
+body{
+    width: 1280px; /*fixed width*/
+    margin: 0 auto;
+}
+
+header {
+    background-color: var(--lilac);  
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+p {
+    font-size: 20px;
+    font-family: var(--body-font);
+}
+
+h2{
+    font-family: var(--header-font);
+    font-size: 2rem;
+}
+
+h3{
+    font-family: var(--header-font);
+    font-size: 1.50rem;
+}
+
+h4{
+     font-family: var(--header-font);
+    font-size: 1.25rem;
+}
+/*logo text*/
+header h1{
+    font-family: var(--logo-font);
+    font-size: 5rem;
+    color: var(--dk-gray);
+}
+
+/*nav styles*/
+nav ul{
+    display: grid;
+    grid-template-columns: 7rem 7rem 7rem 7rem 7rem;
+    justify-content: center;
+    column-gap: 10px;
+    margin-top: 3rem;
+}
+
+nav a{
+    text-decoration: none;
+    color: var(--dk-gray);
+    font-family: var(--header-font);
+    font-size: 20px;
+    display: block;
+    text-align: center;
+}
+
+nav a:hover{
+    border-top: 5px solid var(--lt-green);  
+     border-bottom: 5px solid var(--lt-green);     
+    transition: border 0.3s ease, color 0.3s ease;
+}
+
+/*Skip Link*/
+.skip-link{
+  position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
 
 body.light-mode {
   background-color: var(--white);
@@ -109,6 +189,7 @@ body.dark-mode {
   }
 }
 
+/*Design for the color picking table */
 .color-table { 
     border-collapse: collapse; 
     margin: 10px 0; 
@@ -125,9 +206,73 @@ body.dark-mode {
     margin-right: 10px;
 } 
 
+/*default splat color and size*/
 #splat {
      width: 200px; 
      height: 200px; 
      background-color: #BF26A6;
     clip-path: url(#splatClip);
  }
+
+#about{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 30px;
+    column-gap: 40px;
+    margin-bottom: 30px;
+}
+
+.aboutText{
+ grid-column: 2;
+}
+
+.aboutText p{
+    line-height: 30px;
+}
+
+#fillers{
+    background-color: var(--lt-blue);
+    color: var(--white);
+    box-shadow: var(--shadow);
+    margin: 0 auto;
+}
+
+#fillers h2{
+    text-align: center;
+    padding-top: 30px;
+}
+
+#fillerList{
+    font-family: var(--body-font);
+    font-size: 1.5rem;
+}
+
+#fillerGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#fillerListGrid{
+    text-align: center;
+    padding: 30px 0;
+}
+
+#fillerListGrid li{
+    padding: 20px;
+}
+
+#fillerListGrid li:hover{
+    cursor: pointer;
+    transform: scale(1.1);    
+    color: var(--lilac);
+}
+
+#fillerDisplay{
+    text-align: center;
+    padding: 30px 0;
+}
+
+#fillerDisplay img{
+    margin: 15px 0;
+     box-shadow: var(--shadow);
+}

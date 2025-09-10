@@ -15,6 +15,10 @@
   <!-- <meta property="og:image" content="..."> -->
   <!-- External Stylesheet -->
   <link rel="stylesheet" href="styles.css">
+  <!--Fonts-->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Flavors&family=Jua&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+  </style>
 </head>
 <body>
   <header>
@@ -36,19 +40,19 @@
     </button>
 
     <!--Logo and header-->
-    <h1>Slime Combine</h1>
-    <!--Image licensed with the Adobe Stock Photo educational license-->
+     <h1>Slime Combine</h1>
+     <!--Image licensed with the Adobe Stock Photo educational license-->
     <img src="images/logo.png" width="150" height="150" alt="Slime Combine's logo of a green slime splatter">
+
 
      <!--Nav-->
     <nav>
         <ul> 
-            <!--ADD LINKS-->
             <li><a href="#about">About Slime Combine</a></li>
             <li><a href="#fillers">Slime Stuffin'</a></li>
              <li><a href="#promo">Rewards</a></li>
             <li><a href="#shop">Shop</a></li>
-            <li><a href="">Contact Us</a></li>
+            <li><a href="#submitForm">Contact Us</a></li>
         </ul>
     </nav>
   </header>
@@ -57,33 +61,39 @@
 
     <!--About-->
     <section id="about">
-         <!--Image licensed with the Adobe Stock Photo educational license-->
-         <img src="images/slime_banner.jpeg" width="800" height="533" alt="A girl in blue peaking through a hole in the slime she is playing with">
-        <h2>What is Slime Combine?</h2>
-        <p>Slime Combine is an exciting new way to customize your slime. Slime should be unique. Just like you! Thats why we came up with a company that lets 
-            you slime your way. The process is easy.
-            First, select a color using our color picker. Next, pick your stuffin'
-            from our selection of fun slime fillers. We will make your customized slime and send it straight to your door. 
-        </p>
+        <!--Image licensed with the Adobe Stock Photo educational license-->
+        <img src="images/slime_banner.jpeg" width="800" height="533" alt="A girl in blue peaking through a hole in the slime she is playing with">
+        <div class="aboutText">
+            <h2>What is Slime Combine?</h2>
+            <p>Slime Combine is an exciting new way to customize your slime. Slime should be unique. Just like you! Thats why we came up with a company that lets 
+                you slime your way. The process is easy.
+                First, select a color using our color picker. Next, pick your stuffin'
+                from our selection of fun slime fillers. We will make your customized slime and send it straight to your door. 
+            </p>
+        </div>
     </section>
     
     <!--Fillers for the slime product display-->
     <section id="fillers">
         <h2>Our Stuffin' Collection</h2>
-         <ul id="fillerList">
-            <li data-item="sparkles">Sparkles</li>
-            <li data-item="farm">Farm Animals</li>
-            <li data-item="foam">Crackle Foam</li>
-            <li data-item="candy">Candy</li>
-            <li data-item="fruit">Fruit</li>
-        </ul>
+         <div id="fillerGrid">
+            <div id="fillerListGrid">
+                <h3>Click a stuffin' to learn more</h3>
+                <ul id="fillerList">
+                    <li data-item="sparkles">Sparkles</li>
+                    <li data-item="farm">Farm Animals</li>
+                    <li data-item="foam">Crackle Foam</li>
+                    <li data-item="candy">Candy</li>
+                    <li data-item="fruit">Fruit</li>
+                </ul>
+            </div>
 
-        <div id="fillerDisplay">
-            <h3 id="fillerName">Click a stuffin' to learn more</h3>   <!--Instructions-->
-            <img id="fillerImage" src="images/slime_screen.png" alt="A place holder image of slime across the screen.">  <!--Place holder Image. Image licensed with the Adobe Stock Photo educational license-->
-            <p id="fillerDescription"></p>
+            <div id="fillerDisplay">
+                <h3 id="fillerName">Its Slime Time!</h3>   <!--Instructions-->
+                <img id="fillerImage" src="images/slime_screen.png" width="600" height="500" alt="A place holder image of slime across the screen.">  <!--Place holder Image. Image licensed with the Adobe Stock Photo educational license-->
+                <p id="fillerDescription"></p>
+            </div>
         </div>
-
     </section>
 
   <section id="promo">
@@ -213,11 +223,11 @@
         <button type="submit">Submit</button>
     </form>
 
-      <div id="objPropsOutput"></div>
+      <div id="formOutput"></div>
     </section>
 
   <!-- JavaScript Link-->
-  <script src="myScript.js"></script>
+  <script src="myScript.js" defer></script>
 </main>
 <footer>
     <h4>Don't forget to follow us on social media</h4>

@@ -161,6 +161,7 @@ let users = [];
 
 document.getElementById("contactForm").addEventListener("submit", newUser);
 
+//new user function
 function newUser(e) {
   e.preventDefault();
 
@@ -174,28 +175,28 @@ function newUser(e) {
   // Clear old errors
   let errorSpans = document.querySelectorAll("#submitForm .message");
   errorSpans.forEach(span => span.textContent = "");
-  let outputP = document.getElementById("objPropsOutput");
+  let outputP = document.getElementById("formOutput");
 
   let isValid = true;
 
   //Regex for name email and phone
   let nameRegex = /^[A-Za-z]{2,}(?:\s[A-Za-z]{2,})+$/; 
   let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  let phoneRegex = /^\d{10}$/; // simple 10-digit phone
+  let phoneRegex = /^\d{10}$/; 
 
-  //Validate Name
+  //If Validate Name- if none is listed
   if (!nameRegex.test(nameInput.value.trim())) {
     nameInput.nextElementSibling.textContent = "Please enter your full name (first and last).";
     isValid = false;
   }
 
-  //Validate Comment
+  //If Validate Comment- if none is listed
   if (commentInput.value.trim() === "") {
     commentInput.nextElementSibling.textContent = "Comments are required.";
     isValid = false;
   }
 
-  //Validate Contact
+  //If Validate Contact- if email or phone is not the right format
   if (!methodInput) {
     document.querySelector("fieldset .message").textContent = "Please select a preferred contact method.";
     isValid = false;
