@@ -3,22 +3,26 @@
 //Light and Dark mode Event 
 document.addEventListener('DOMContentLoaded', () => {
   const toggleButton = document.getElementById('light-toggle');
+  const body = document.body;
 
+  // auto dark mode
+  if (!body.classList.contains('light-mode') && !body.classList.contains('dark-mode')) {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    body.classList.add(prefersDark ? 'dark-mode' : 'light-mode');
+  }
+
+  //Toggle button
   toggleButton.addEventListener('click', () => {
-    const body = document.body;
-
-    if (body.classList.contains('dark-mode')) { //light mode switched on
+    if (body.classList.contains('dark-mode')) {
       body.classList.remove('dark-mode');
       body.classList.add('light-mode');
-    } else if (body.classList.contains('light-mode')) {  //dark mode switched on
+    } else {
       body.classList.remove('light-mode');
       body.classList.add('dark-mode');
-    } else { //user's default
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      body.classList.add(prefersDark ? 'light-mode' : 'dark-mode');
     }
   });
 });
+
 
 //Data for fillers  
 const fillers = {
@@ -83,6 +87,7 @@ function promoGame(){
     //display the numbers on the screen
 	dieDisplay1.innerHTML = die1;
   	dieDisplay2.innerHTML = die2;
+  
   //if else displays the message for wining/losing the discount
   if(die1 === 1 && die2=== 1){
 	    gameMessage.innerHTML = "You win! Enjoy 10% using the code WINNER10%OFF"
@@ -101,59 +106,93 @@ const splat = document.getElementById("splat");
 //changing the color 
 picker.addEventListener("input", () => { splat.style.backgroundColor = picker.value; });
 
-// Shopping cart elements
-const checkboxes = document.querySelectorAll('.shoppingCart input[type="checkbox"]');
-const cartItems = document.getElementById('cartItems');
-const subtotalElem = document.getElementById('subtotal');
-const taxElem = document.getElementById('tax');
-const shippingElem = document.getElementById('shipping');
-const totalPriceElem = document.getElementById('totalPrice');
 
-// Declare cart
-let cart = [];
 
-// Cart update function
-function updateCart() {
-    cartItems.innerHTML = '';
+document.addEventListener('DOMContentLoaded', () => {
+    // Shopping cart elements
+    const checkboxes = document.querySelectorAll('.shoppingCart input[type="checkbox"]');
+    const cartItems = document.getElementById('cartItems');
+    const subtotalElem = document.getElementById('subtotal');
+    const taxElem = document.getElementById('tax');
+    const shippingElem = document.getElementById('shipping');
+    const discountInput = document.getElementById('discount');
+    const discountForm = document.getElementById('discountForm');
+    const discountCode = 'WINNER10%OFF';
+    const totalPriceElem = document.getElementById('totalPrice');
+    //for discount message
+    const discountMessage = document.createElement('p');
+    discountForm.appendChild(discountMessage);
 
-    cart.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-        cartItems.appendChild(li);
-    });
+    // Declare cart
+    let cart = [];
+    //default the discount to false
+    let discountApplied = false;
 
-    const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+    // Cart update function
+    function updateCart() {
+        cartItems.innerHTML = '';
 
-    // Tax 
-    const tax = subtotal * 0.08;
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+            cartItems.appendChild(li);
+        });
 
-    // Shipping 
-    const shipping = cart.length > 0 ? 8.00 : 0.00;
+        const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
 
-    // Total
-    const grandTotal = subtotal + tax + shipping;
+        // Tax 
+        const tax = subtotal * 0.08;
 
-    // Update display
-    subtotalElem.textContent = subtotal.toFixed(2);
-    taxElem.textContent = tax.toFixed(2);
-    shippingElem.textContent = shipping.toFixed(2);
-    totalPriceElem.textContent = grandTotal.toFixed(2);
-}
+        // Shipping 
+        const shipping = cart.length > 0 ? 8.00 : 0.00;
 
-// Cart total 
-checkboxes.forEach(box => {
-    box.addEventListener('change', () => {
-        const name = box.dataset.name;
-        const price = parseFloat(box.dataset.price);
+        // Total
+        let grandTotal = subtotal + tax + shipping;
 
-        if (box.checked) {
-            cart.push({ name, price });
-        } else {
-            cart = cart.filter(i => i.name !== name);
+        //discount 
+        if(discountApplied){
+            const discount = subtotal * 0.10;
+            grandTotal = grandTotal - discount;
         }
 
-        updateCart();
+        // Update display
+        subtotalElem.textContent = subtotal.toFixed(2);
+        taxElem.textContent = tax.toFixed(2);
+        shippingElem.textContent = shipping.toFixed(2);
+        totalPriceElem.textContent = grandTotal.toFixed(2);
+    }
+
+    //apply discount
+     discountForm.addEventListener('submit', e => {
+        e.preventDefault();
+
+        if (discountInput.value.trim().toUpperCase() === discountCode) {
+            discountApplied = true;
+            updateCart();
+
+            discountMessage.textContent = "Discount applied!";
+            discountMessage.style.color = "green";
+        } else {
+            discountMessage.textContent = "Invalid discount code.";
+            discountMessage.style.color = "red";
+        }
     });
+    // Cart total 
+    checkboxes.forEach(box => {
+        box.addEventListener('change', () => {
+            const name = box.dataset.name;
+            const price = parseFloat(box.dataset.price);
+
+            if (box.checked) {
+                cart.push({ name, price });
+            } else {
+                cart = cart.filter(i => i.name !== name);
+            }
+
+            updateCart();
+        });
+    });
+
 });
 
 //declare users

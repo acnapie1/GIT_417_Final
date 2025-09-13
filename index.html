@@ -97,9 +97,11 @@
     </section>
 
   <section id="promo">
-		<h2>Get two ones and get 10% off your order!</h2>
+		<h2>Snake Eyes Game! Get two ones and get 10% off your order!</h2>
 		<p>Click the button to generate two random numbers. If both numbers are ones, enjoy 10% off your order. Good luck!</p>
-		<!--Promo game -->
+          <!--Image licensed with the Adobe Stock Photo educational license-->
+        <img src="images/snake.png" alt="a black and white cartoon of a snake" width="100" height="100">
+        <!--Promo game -->
         <span id="random1"></span>
 		<span id="random2"></span>
 		<p id="promoMessage"></p>
@@ -107,6 +109,7 @@
     </section>
 
   <section id="shop">
+     <h3>Pick your slime's color and add it to your cart</h3>
     <section id="colorSelector">
         <!--Slime shape--> 
         <svg width="0" height="0" style="position:absolute;left:-9999px" aria-hidden="true">
@@ -116,62 +119,86 @@
             </clipPath> 
             </defs> 
         </svg> 
-        <h3>Pick your slime's color</h3>
+       
           <!--table for the color picker--> 
-        <table class="color-table"> 
-            <tr> 
-                <td><label for="splatColor">Click the box bellow to customize your color</label></td>
-                <td><input type="color" id="splatColor" value="#BF26A6"></td> 
-                </tr>
+        <table class="colorTable"> 
+           <tr> 
+                <td>
+                    <label for="splatColor">Click the box below to customize your color</label>
+                </td>
+             </tr>
+            <tr>
+                <td>
+                    <input type="color" id="splatColor" value="#BF26A6">
+                </td>
+            </tr>
         </table> 
         <div id="splat"></div>
     </section>
     </section>  
 
     <section id="shopping">
+
+         <h3>Check out</h3>
         <div class="shoppingGrid">
-            <h3>Customize your slime and add it to cart</h3>
             <!--Product display with options to add to the cart--> 
             <div class="shoppingCart">
-                <h3>Check out</h3>
-
-                <h4>Slime base</h4>
-                <label>
-                    <input type="checkbox" data-name="slimeSelect" data-price="15.00">
-                    Your Custom Slime - $15.00
-                </label><br>
-                
-                <h4>Sparkles</h4>
-                <label>
-                    <input type="checkbox" data-name="sparklesAdd" data-price="3.00">
-                    Sparkles - $3.00
-                </label><br>
-
-                <h4>Farm</h4>
-                <label>
-                    <input type="checkbox" data-name="farmAdd" data-price="5.00">
-                    Farm - $5.00
-                </label><br>
-
-                <h4>Foam</h4>
-                <label>
-                    <input type="checkbox" data-name="foamAdd" data-price="3.00">
-                    Foam - $3.00
-                </label><br>
-
-                <h4>Candy</h4>
-                <label>
-                    <input type="checkbox" data-name="candyAdd" data-price="3.00">
-                    Candy - $3.00
-                </label><br>
-
-                 <h4>Fruit</h4>
-                <label>
-                    <input type="checkbox" data-name="fruitAdd" data-price="3.00">
-                    Fruit - $3.00
-                </label><br>
-            </div>
-
+                <div class="item1">
+                        <h4>Slime base</h4>
+                        <!--Image licensed with the Adobe Stock Photo educational license-->
+                        <img src="images/smallSlime.jpeg" alt="a picture of blue slime" width="200" height="133">
+                        <label>
+                        <input type="checkbox" data-name="slimeSelect" data-price="15.00">
+                        Your Custom Slime - $15.00
+                        </label><br>
+                </div>
+                <div class="item2">
+                        <h4>Sparkles</h4>
+                        <!--Image licensed with the Adobe Stock Photo educational license-->
+                        <img src="images/glitterSmall.jpeg" alt="rainbow glitter close to the camera" width="200" height="133">
+                        <label>
+                            <input type="checkbox" data-name="sparklesAdd" data-price="3.00">
+                            Sparkles - $3.00
+                        </label><br>
+                </div>   
+                <div class="item3">
+                        <h4>Farm</h4>
+                        <!--Image licensed with the Adobe Stock Photo educational license-->
+                        <img src="images/farmSmall.jpeg" alt="farm animal figurines on hay" width="200" height="109">
+                        <label>
+                            <input type="checkbox" data-name="farmAdd" data-price="5.00">
+                            Farm - $5.00
+                        </label><br>
+                </div>
+                <div class="item4">
+                        <h4>Foam</h4>
+                        <!--Image licensed with the Adobe Stock Photo educational license-->
+                        <img src="images/foamSmall.jpeg" alt="foam close up with a blue background" width="200" height="125">
+                        <label>
+                            <input type="checkbox" data-name="foamAdd" data-price="3.00">
+                            Foam - $3.00
+                        </label><br>
+                </div>
+                <div class="item5">
+                        <h4>Candy</h4>
+                        <!--Image licensed with the Adobe Stock Photo educational license-->
+                        <img src="images/candySmall.jpeg" alt="colorful pieces of candy" width="200" height="147">
+                        <label>
+                            <input type="checkbox" data-name="candyAdd" data-price="3.00">
+                            Candy - $3.00
+                        </label><br>
+                </div>
+                <div class="item6">
+                        <h4>Fruit</h4>
+                        <!--Image licensed with the Adobe Stock Photo educational license-->
+                        <img src="images/fruitSmall.jpeg" alt="colorful slices of fruit" width="200" height="113">
+                        <label>
+                            <input type="checkbox" data-name="fruitAdd" data-price="3.00">
+                            Fruit - $3.00
+                        </label><br>
+                 </div>
+                </div>
+           
             <div class="checkout">  
                 <!--The cart which adds subtotal, tax, shopping, and total price-->
                 <h3>Your Cart</h3>
@@ -179,6 +206,13 @@
                 <p>Sub Total: $<span id="subtotal">0.00</span></p>
                 <p>Tax (8%): $<span id="tax">0.00</span></p>
                 <p>Shipping: $<span id="shipping">0.00</span></p>
+
+                 <!--Discount code from snake eyes-->
+                 <form id="discountForm">
+                    <label for="discount">Enter Discount Code</label>
+                    <input type="text" name="discount" id="discount">
+                    <button type="submit">Apply Discount</button>
+                </form>
                 <p><strong>Total: $<span id="totalPrice">0.00</span></strong></p>
                 
                 <button type="button">Check Out</button>
@@ -206,14 +240,14 @@
         <span class="message"></span>
 
         <!--User comments-->
-        <label for="comment">Please Enter Your Comments<span class="required">*</span></label><br>
+        <label for="comment">Please Enter Your Comments<span class="required">*</span></label>
         <textarea id="comment" name="comment" rows="6" cols="20"></textarea>
         <span class="message"></span>
 
         <!--Preferred Contact method-->
         <fieldset>
         <legend>Select Preferred Contact Method<span class="required">*</span></legend>
-        <input id="optionPhone" type="radio" name="contact" value="phone" required>
+        <input id="optionPhone" type="radio" name="contact" value="phone" required checked>
         <label for="optionPhone">Phone</label>
         <input id="optionEmail" type="radio" name="contact" value="email">
         <label for="optionEmail">Email</label>
@@ -230,7 +264,7 @@
   <script src="myScript.js" defer></script>
 </main>
 <footer>
-    <h4>Don't forget to follow us on social media</h4>
+    <h3>Don't forget to follow us on social media</h3>
 
     <!-- Generated Social Media Icons -->
     <div class="social-icons" style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
