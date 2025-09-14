@@ -54,12 +54,16 @@ table {
 /*Custom Styles*/
 :root {
   --lilac: #ECBEED;
+  --lt-purple: #EEE4F2;
+  --md-purple: #CAB4D9;
   --lt-green: #53B889;
   --dk-gray: #252425;
   --dk-blue: #02126D;
-  --red: #A61C28;
+  --lt-pale-blue: #A7BAF2;
   --lt-blue: #0388A6;
   --white: #F2F2F2;
+  --dk-pale-blue: #7D79F2;
+  --md-pale-blue: #908DF2;
   --body-font: "Sansation", sans-serif;
   --header-font:  "Jua", sans-serif;
   --logo-font: "Flavors", cursive;
@@ -459,7 +463,7 @@ body.dark-mode {
     padding-top: 2rem;
     padding-bottom: 2rem;
     box-shadow: var(--shadow);
-    border: 2px solid #CAB4D9; 
+    border: 2px solid var(--md-purple); 
     border-radius: 4px;
     color: var(--dk-gray);
 }
@@ -468,8 +472,8 @@ body.dark-mode {
     width: 20rem;
     height: 6rem;
     margin-bottom: 1rem;
-    background-color: #EEE4F2;
-    border: 2px solid #CAB4D9; 
+    background-color:  var(--lt-purple);
+    border: 2px solid var(--md-purple); 
     box-shadow: var(--shadow);
 }
 
@@ -483,8 +487,8 @@ fieldset{
     margin-bottom: 1rem;
     width: 20rem;
     height: 2rem;
-    background-color: #EEE4F2;
-    border: 2px solid #CAB4D9; 
+    background-color: var(--lt-purple);
+    border: 2px solid var(--md-purple); 
     box-shadow: var(--shadow);
 }
 
@@ -494,7 +498,7 @@ fieldset{
 
 #name:focus, #number:focus, #emailAd:focus, #comment:focus{
     outline: none;
-    border: 2px solid #A7BAF2; 
+    border: 2px solid var(--lt-pale-blue); 
     box-shadow: inset 0 0 5px var(--dk-blue);
 }
 
@@ -507,15 +511,15 @@ input[type="radio"]{
     font-size: 20px;
     padding: .5rem 1rem;
     box-shadow: var(--shadow);
-    background-color: #A7BAF2;
+    background-color: var(--lt-pale-blue);
     color: var(--dk-gray);
     cursor: pointer;
-    border: 1px solid #7D79F2; 
+    border: 1px solid var(--dk-pale-blue); 
 }
 
 #contactForm button:hover{
     box-shadow: inset 0 0 5px var(--dk-blue);
-    background-color: #908DF2;
+    background-color: var(--md-pale-blue);
 }
 
 /*footer design*/
