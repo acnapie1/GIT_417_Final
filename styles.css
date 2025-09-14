@@ -180,7 +180,7 @@ body.dark-mode {
 #light-toggle {
   position: absolute;
   top: 0.5rem;
-  right: 0.5rem;
+  right: 10rem;
   width: 70px;
   height: 70px;
   border-radius: 50%;
