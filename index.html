@@ -12,9 +12,11 @@
   <meta property="og:type" content="website">
   <!-- TODO: Add OG URL and Image -->
   <!-- <meta property="og:url" content="..."> -->
-  <!-- <meta property="og:image" content="..."> -->
+  <meta property="og:image" content="images/slime_banner.jpeg">
   <!-- External Stylesheet -->
   <link rel="stylesheet" href="styles.css">
+  <!-- JavaScript Link-->
+  <script src="myScript.js" defer></script>
   <!--Fonts-->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Flavors&family=Jua&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
@@ -89,14 +91,15 @@
             </div>
 
             <div id="fillerDisplay">
-                <h3 id="fillerName">Its Slime Time!</h3>   <!--Instructions-->
+                <h3 id="fillerName">Its Slime Time!</h3>   <!--placeholder h3-->
                 <img id="fillerImage" src="images/slime_screen.png" width="600" height="500" alt="A place holder image of slime across the screen.">  <!--Place holder Image. Image licensed with the Adobe Stock Photo educational license-->
                 <p id="fillerDescription"></p>
             </div>
         </div>
     </section>
 
-  <section id="promo">
+    <!--Snake eyes promo game section-->
+   <section id="promo">
 		<h2>Snake Eyes Game! Get two ones and get 10% off your order!</h2>
 		<p>Click the button to generate two random numbers. If both numbers are ones, enjoy 10% off your order. Good luck!</p>
           <!--Image licensed with the Adobe Stock Photo educational license-->
@@ -116,7 +119,7 @@
             <defs> 
                 <clipPath id="splatClip" clipPathUnits="objectBoundingBox">
                 <path d="M0.5,0.04 C0.62,0.04 0.7,0.12 0.74,0.22 C0.82,0.28 0.82,0.4 0.7,0.48 C0.78,0.58 0.82,0.72 0.7,0.76 C0.62,0.8 0.55,0.76 0.48,0.84 C0.4,0.92 0.3,0.9 0.24,0.8 C0.12,0.72 0.14,0.56 0.06,0.48 C0.02,0.36 0.06,0.24 0.14,0.18 C0.22,0.12 0.34,0.12 0.44,0.06 C0.48,0.04 0.5,0.04 0.5,0.04 Z" />
-            </clipPath> 
+                </clipPath> 
             </defs> 
         </svg> 
        
@@ -135,20 +138,20 @@
         </table> 
         <div id="splat"></div>
     </section>
-    </section>  
+  </section>  
 
     <section id="shopping">
 
-         <h3>Check out</h3>
+        <h3>Check out</h3>
         <div class="shoppingGrid">
             <!--Product display with options to add to the cart--> 
-            <div class="shoppingCart">
+            <div class="shoppingCart"> <!--Div to position the products-->
                 <div class="item1">
                         <h4>Slime base</h4>
                         <!--Image licensed with the Adobe Stock Photo educational license-->
                         <img src="images/smallSlime.jpeg" alt="a picture of blue slime" width="200" height="133">
                         <label>
-                        <input type="checkbox" data-name="slimeSelect" data-price="15.00">
+                        <input type="checkbox" data-name="Slime" data-price="15.00">
                         Your Custom Slime - $15.00
                         </label><br>
                 </div>
@@ -157,8 +160,8 @@
                         <!--Image licensed with the Adobe Stock Photo educational license-->
                         <img src="images/glitterSmall.jpeg" alt="rainbow glitter close to the camera" width="200" height="133">
                         <label>
-                            <input type="checkbox" data-name="sparklesAdd" data-price="3.00">
-                            Sparkles - $3.00
+                        <input type="checkbox" data-name="Sparkles" data-price="3.00">
+                        Sparkles - $3.00
                         </label><br>
                 </div>   
                 <div class="item3">
@@ -166,8 +169,8 @@
                         <!--Image licensed with the Adobe Stock Photo educational license-->
                         <img src="images/farmSmall.jpeg" alt="farm animal figurines on hay" width="200" height="109">
                         <label>
-                            <input type="checkbox" data-name="farmAdd" data-price="5.00">
-                            Farm - $5.00
+                        <input type="checkbox" data-name="Farm" data-price="5.00">
+                        Farm - $5.00
                         </label><br>
                 </div>
                 <div class="item4">
@@ -175,8 +178,8 @@
                         <!--Image licensed with the Adobe Stock Photo educational license-->
                         <img src="images/foamSmall.jpeg" alt="foam close up with a blue background" width="200" height="125">
                         <label>
-                            <input type="checkbox" data-name="foamAdd" data-price="3.00">
-                            Foam - $3.00
+                        <input type="checkbox" data-name="Foam" data-price="3.00">
+                        Foam - $3.00
                         </label><br>
                 </div>
                 <div class="item5">
@@ -184,8 +187,8 @@
                         <!--Image licensed with the Adobe Stock Photo educational license-->
                         <img src="images/candySmall.jpeg" alt="colorful pieces of candy" width="200" height="147">
                         <label>
-                            <input type="checkbox" data-name="candyAdd" data-price="3.00">
-                            Candy - $3.00
+                        <input type="checkbox" data-name="Candy" data-price="3.00">
+                        Candy - $3.00
                         </label><br>
                 </div>
                 <div class="item6">
@@ -193,8 +196,8 @@
                         <!--Image licensed with the Adobe Stock Photo educational license-->
                         <img src="images/fruitSmall.jpeg" alt="colorful slices of fruit" width="200" height="113">
                         <label>
-                            <input type="checkbox" data-name="fruitAdd" data-price="3.00">
-                            Fruit - $3.00
+                        <input type="checkbox" data-name="Fruit" data-price="3.00">
+                        Fruit - $3.00
                         </label><br>
                  </div>
                 </div>
@@ -215,10 +218,12 @@
                 </form>
                 <p><strong>Total: $<span id="totalPrice">0.00</span></strong></p>
                 
-                <button type="button">Check Out</button>
-            </div>
-
+                <button type="button">Check Out</button><br>
+                <h4>Cart Items</h4>
+            </div> 
+            <ul id="cart-items"></ul>  
         </div>
+    
     </section>
 
     <section id="submitForm">
@@ -247,7 +252,7 @@
         <!--Preferred Contact method-->
         <fieldset>
         <legend>Select Preferred Contact Method<span class="required">*</span></legend>
-        <input id="optionPhone" type="radio" name="contact" value="phone" required checked>
+        <input id="optionPhone" type="radio" name="contact" value="phone" required>
         <label for="optionPhone">Phone</label>
         <input id="optionEmail" type="radio" name="contact" value="email">
         <label for="optionEmail">Email</label>
@@ -260,8 +265,7 @@
       <div id="formOutput"></div>
     </section>
 
-  <!-- JavaScript Link-->
-  <script src="myScript.js" defer></script>
+  
 </main>
 <footer>
     <h3>Don't forget to follow us on social media</h3>
