@@ -315,7 +315,7 @@ body.dark-mode {
     font-family: var(--header-font);
     font-size: 20px;
     background-color: var(--lt-blue);
-    color: var(--dk-gray);
+    color: var(--white);
     box-shadow: var(--shadow);
     border: none;
 }
