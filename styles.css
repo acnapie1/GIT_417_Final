@@ -425,7 +425,7 @@ body.dark-mode {
     font-family: var(--body-font);
     font-size: 18px;
     background-color: var(--lt-green);
-    color: var(--white);
+    color: var(--dk-gray);
     box-shadow: var(--shadow);
     border: none;
 }
@@ -441,7 +441,7 @@ body.dark-mode {
     font-family: var(--header-font);
     font-size: 22px;
     background-color: var(--lt-green);
-    color: var(--white);
+    color: var(--dk-gray);
     box-shadow: var(--shadow);
     border: none;
 }
