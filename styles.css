@@ -473,7 +473,7 @@ body.dark-mode {
     width: 20rem;
     height: 6rem;
     margin-bottom: 1rem;
-    background-color:  var(--lt-purple);
+    background-color:  var(--white);
     border: 2px solid var(--md-purple); 
     box-shadow: var(--shadow);
 }
@@ -488,7 +488,7 @@ fieldset{
     margin-bottom: 1rem;
     width: 20rem;
     height: 2rem;
-    background-color: var(--lt-purple);
+    background-color: var(--white);
     border: 2px solid var(--md-purple); 
     box-shadow: var(--shadow);
 }
