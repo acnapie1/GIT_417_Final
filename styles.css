@@ -54,7 +54,7 @@ table {
 /*Custom Styles*/
 :root {
   --lilac: #ECBEED;
-  --lt-purple: #e9e7ea;
+  --lt-purple: #f3eaf8;
   --md-purple: #CAB4D9;
   --lt-green: #53B889;
   --dk-gray: #252425;
@@ -318,6 +318,7 @@ body.dark-mode {
     color: var(--white);
     box-shadow: var(--shadow);
     border: none;
+    font-weight: bold;
 }
 
 #promo button:hover{
